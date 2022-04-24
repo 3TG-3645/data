@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nacionalidade</title>
+    <title>Brasileiro ou Estrangeiro</title>
+    <style>
+    
+    #button{margin:0px 0px 0px 10px}
+    
+    </style>
 </head>
 <body>
-    <h1>Brasileiro ou Estrangeiro?</h1>
-    em qual país você nasceu <input type="email" name="país" id="ll"> <input type="button" value="confirmar" onclick="clicar()">
-    <div id="result"></div>
+    <h1>brasileiro ou estrangeiro</h1>
+    <div>entre qual o seu país de origem <input type="text" name="txt" id="txt"><input type="button" value="confirmar" onclick="clicar()" id="button"></div>
+    <div id="res"></div>
     <script>
-    var crt=document.getElementById('ll')  
-    var res=document.getElementById('result')
-    function clicar() {
-        res.innerHTML=`<p>O seu país é ${ll}</p>`
-    }
-    </script> 
-    
+        var txtn1=document.getElementById('txt')
+        var res=document.getElementById('res')
+        var txt=txtn1.value
+        function clicar() {
+            res.innerHTML= `<p>o seu país é ${txt.toUpperCase()}</p>`
+            if (txt=='brasil') res.innerHTML += `<P>você é brasileiro</P>`
+            else res.innerHTML +='<p>você é estrangeiro</p>'
+             
+        }
+    </script>
 </body>
 </html>
